@@ -1,0 +1,324 @@
+/* =========================================
+   VARIÁVEIS GLOBAIS
+   ========================================= */
+:root {
+    --bg-color: #FAFAFA;
+    --text-primary: #111111;
+    --text-secondary: #666666;
+    --border-color: #E0E0E0;
+    --font-main: 'Inter', sans-serif;
+}
+
+/* =========================================
+   RESET E BASE
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================
+   TIPOGRAFIA E LINKS
+   ========================================= */
+a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--text-secondary);
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin-bottom: 3rem;
+}
+
+/* =========================================
+   CABEÇALHO E FOTO DE PERFIL
+   ========================================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Ajuste na miniatura: cursor de clique e transição suave */
+.profile-photo {
+    width: 50px; 
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EBEBEB;
+    cursor: pointer; /* Muda o mouse para uma "mãozinha" */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05); /* Dá um leve zoom ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center; /* Foca no topo (rosto) para evitar cortes */
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: -0.02em;
+}
+
+nav a {
+    margin-left: 2rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* =========================================
+   MODAL DA FOTO EM TELA CHEIA
+   ========================================= */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9); 
+    /*backdrop-filter: blur(5px);*/ 
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 85vh; 
+    margin-top: 5vh;
+    border-radius: 8px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    object-fit: contain; /* Garante que a foto toda apareça */
+}
+
+.modal-content {
+    animation-name: zoom;
+    animation-duration: 0.3s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0.8); opacity: 0;}
+    to {transform:scale(1); opacity: 1;}
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: 300;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* =========================================
+   HERO SECTION (Sobre)
+   ========================================= */
+.hero {
+    padding: 10rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 2rem;
+    max-width: 800px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+}
+
+/* =========================================
+   PROJETOS 
+   ========================================= */
+.projects-section {
+    padding: 5rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 4rem 2rem;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-image-placeholder {
+    width: 100%;
+    height: 400px;
+    background-color: #EBEBEB;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image-placeholder {
+    transform: translateY(-5px);
+}
+
+.project-info h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.project-info p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.project-link {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    border-bottom: 1px solid var(--text-primary);
+    padding-bottom: 2px;
+}
+
+/* =========================================
+   RODAPÉ E CONTATO
+   ========================================= */
+.footer {
+    padding: 6rem 5% 3rem;
+    background-color: #111111;
+    color: var(--bg-color);
+    text-align: center;
+}
+
+.footer .section-title {
+    color: var(--bg-color);
+}
+
+.footer-desc {
+    margin-bottom: 3rem;
+    color: #999;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.social-links a {
+    color: var(--bg-color);
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+}
+
+.social-links a:hover {
+    color: #999;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* =========================================
+   RESPONSIVIDADE
+   ========================================= */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .navbar {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    nav a {
+        margin: 0 1rem;
+    }
+    .project-image-placeholder {
+        height: 300px;
+    }
+    /* Ajuste do modal para celular */
+    .modal-content {
+        max-width: 100%;
+        border-radius: 0;
+        margin-top: 10vh;
+    }
+    .close-modal {
+        top: 10px;
+        right: 20px;
+    }
+}

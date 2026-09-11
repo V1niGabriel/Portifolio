@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nome do Desenvolvedor | Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonte minimalista e elegante (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Modal para a foto em tela cheia (Oculto por padrão) -->
+    <div id="photo-modal" class="modal">
+        <span class="close-modal" id="close-modal">&times;</span>
+        <img class="modal-content" id="full-size-photo" title="imagem do desenvolvedor">
+    </div>
+
+    <!-- Cabeçalho / Navegação -->
+    <header class="navbar">
+        <div class="brand">
+            <div class="profile-photo" id="profile-photo-container">
+                <!-- caminho da foto -->
+                <img src="/img/foto_frontal.jpg" alt="Minha Foto" id="profile-img">
+            </div>
+            <div class="logo">Dev.Vinicius Gabriel</div>
+        </div>
+        <nav>
+            <a href="#about">Sobre</a>
+            <a href="#projects">Trabalhos</a>
+            <a href="#contact">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Seção Principal (Hero) -->
+    <main>
+        <section class="hero" id="about">
+            <h1 class="hero-title">Criando soluções digitais com base na engenharia de software.</h1>
+            <p class="hero-subtitle">Sou Vinicius Gabriel da Silva Monteiro, estudante e desenvolvedor focado código eficiente e escalável. Atualmente com foco nas área de Back-end e arquitetura de software. 
+
+Durante meus estudos, tive a oportunidade de adquirir conhecimentos e participar de Projetos Acadêmicos, onde pude desenvolver minhas habilidades técnicas e emocionais.</p>
+        </section>
+
+        <!-- Seção de Projetos -->
+        <section class="projects-section" id="projects">
+            <h2 class="section-title">Projetos Selecionados</h2>
+            <hr class="divider">
+            <!-- O container abaixo receberá os projetos via JavaScript -->
+            <div class="projects-grid" id="projects-grid"></div>
+        </section>
+    </main>
+
+    <!-- Rodapé e Contatos -->
+    <footer class="footer" id="contact">
+        <h2 class="section-title">Vamos conversar!</h2>
+        <p class="footer-desc">Disponível para novas oportunidades e colaborações.</p>
+        <p class="footer-desc">Email: vinigabi256545@gmail.com</p>
+        
+        <div class="social-links">
+            <a href="https://github.com/V1niGabriel" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/vinicius-gabriel-monteiro-9b717b232/" rel="noopener" target="_blank">LinkedIn</a>
+        </div>
+        
+        <p class="copyright">© 2026 [Seu Nome]. Design minimalista inspirado em arquitetura.</p>
+    </footer>
+
+    <!-- Link para o arquivo JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+</html>
